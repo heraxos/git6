@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестовый сайт</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    <script src="js6.js"></script>
+    <style>
+        #Mycalc{
+            background-color:#757273;
+            height:160px;
+        }
+        body{
+            background-color: #272a68;
+        }
+        header{
+            height: 120px;
+            background-color:#4abe33ab;
+        }
+        #img_header{
+            height:100px;
+            width:200px;
+        }
+        #div_headertittle{
+            background-color:#e1f812;
+
+        }
+        footer{
+            height: 80px;
+            background-color:#36280a;
+        }
+        footer.div{
+            background-color:#7e2186;
+        }
+        #navbar_head{
+            background-color:#FF80B0;
+        }
+        #Гиперссылки{
+            background-color:#053f3f;
+        }
+        #Таблица{
+            background-color:#770786;
+            height: 200px;
+        }
+        table{
+            border: 1px solid black;
+        }
+        table td,table th{
+            border: 1px solid black
+        }
+        .chet{
+            background-color:#ec9939
+        }
+        .nechet{
+            background-color:#5b5e5f
+        }
+        #Myform{
+            background-color:#df3434;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="container-fluid">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-2 me-1 mt-2">
+                    <img id="img_header" src="http://getdrawings.com/image/smurf-drawing-58.jpg" alt="Описание картинки" />
+                </div>
+                <div class="container column col-9 m-2 ">
+                    <div id="div_headertittle" class="col-12 align-text-start"></div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container col-8 justify-content-center">
+        <div class="row col my-4 " id="navbar_head"> 
+            <strong>Меню сайта:</strong>
+            <nav class="navbar"> 
+                <div class="container-fluid">
+                 <ul>
+                  <li><a class="navbar-text" href="#Гиперссылки">Список гиперссылок</a></li>
+                  <li><a class="navbar-text" href="#Таблица">Таблица</a></li>
+                  <li><a class="navbar-text" href="#Myform">Форма</a></li>
+                 </ul>
+                </div>
+            </nav> 
+        </div>
+       
+        <div class="row col my-4 " id="Гиперссылки">
+            <div>
+				<h2>Нумерованный список</h2>
+				<ol>
+				   <li><a href="http://www.kubsu.ru/" target="_blank">Абсолютная гиперссылка на сайт КубГУ</a></li>
+				   <li><a href="https://www.kubsu.ru/" target="_blank">Абсолютная гиперссылка на сайт КубГУ в протоколе https</a></li>
+				   <li><a href = "ftp://example.com/myfile.zip" target="_blank"> Ссылка на файл на сервере FTP без авторицации  </a> </li>
+				   <li><a href = "ftp://user:password@example.com/myfile.zip" target="_blank"> Ссылка на файл на сервере FTP с авторизацией </a></li>
+				   <li><a href = "https://ru.wikipedia.org/wiki/HTML#Структура_HTML-документа" target="_blank">Ссылка на фрагмент некоторого сайта </a></li>
+				   <li><a href="#Форма">ссылка на фрагмент текущей страницы</a></li>
+				   <li><a href ="https://yandex.ru/search/?text=КубГУ&lr=35" target="_blank">Ссылка с двумя параметрами в URL</a></li>
+				   <li>Список ссылок основной навигации сайта:
+				<nav class="nav2">
+				 <ul>
+					<li><a href="#Гиперссылки">Нумерованный список</a></li>
+					<li><a href="#Myform">Форма</a></li>
+				 </ul>
+				</nav></li>
+				   <li><a>Ссылка без href</a></li>
+				   <li><a href="">Ссылка с пустым href</a></li>
+				   <li><a href="http://www.kubsu.ru/" rel="nofollow" target="_blank">Ссылка, по которой запрещен переход поискавикам(Яндексу)</a></li>
+				   <li><a href="http://www.kubsu.ru/" target="_blank" rel="noindex">Cсылка, запрещенная для индексации поисковикам</a></li>
+				   <li>Контекстная в тексте абзаца:<p> HTML — стандартизированный язык разметки документов для просмотра веб-страниц в <a href="https://ru.wikipedia.org/wiki/Браузер" target="_blank">браузере</a>. Веб-браузеры получают HTML документ от сервера по протоколам <a href="https://ru.wikipedia.org/wiki/HTTP" target="_blank">HTTP</a>/<a href="https://ru.wikipedia.org/wiki/HTTPS" target="_blank">HTTPS</a> или открывают с локального диска, далее интерпретируют код в интерфейс, который будет отображаться на экране монитора. </p> </li>
+				   <li>Cсылка-изображение: <p><a id="Kubsu" href="https://kubsu.ru/" target="_blank"><img alt = "Сайт КубГУ" src = "https://www.kubsu.ru/sites/default/files/news/logotip_s_kubgu_copy.jpg" height = "702" width = "673"> </a></p></li>
+				   <li>Ссылки из прямоугольных и круглых областей картинки:
+					<p><img alt="" src = "https://img2.freepng.ru/20180427/cwq/kisspng-t-shirt-the-smurfs-clumsy-smurf-gargamel-papa-smur-5ae2de829a5041.9217668115248175386321.jpg" height = "650" width = "480" usemap = ""></p>
+					<p><map name = "">
+						<area alt="" shape = "circle" coords = "239,485,160" href = "https://ru.wikipedia.org/wiki/Горшенёв,_Михаил_Юрьевич" target="_blank" title = "">
+						<area alt="" shape = "rect" coords = "130,54,406,286" href = "https://krasnodog.ru/" target="_blank" title = "">
+					</map></p>
+					
+					</li>
+					<li> <a href = "./example.html" > Относительная ссылка на страницу в текущем каталоге</a> </li>
+				<li> <a href = "./about/example.html" > Относительная ссылка на страницу в каталоге about </a> </li>
+				<li> <a href = "../example.html" > Относительная ссылка на страницу в каталоге уровнем выше текущего </a> </li>
+				<li> <a href = "../../example.com" > Относительная ссылка на страницу в каталоге двумя уровнями выше </a> </li>
+				<li> <a href = "/" > Сокращенная ссылка на главную страницу </a> </li>
+				<li> <a href = "/example.html" > Сокращенная ссылка на внутреннюю страницу </a> </li>
+				</ol>
+            </div>
+        </div>
+
+        <div class="row col py-4" id="Таблица">
+            <div class="ms-5">
+            <table class="ms-5">
+           <tr>
+               <th>Колонка 1</th>
+               <th>Колонка 2</th>
+               <th>Колонка 3</th>
+               <th>Колонка 4</th>
+           </tr>
+           <tr class="nechet">
+               <td colspan="4">объединенная ячейка</td>
+           </tr>
+           <tr class="chet">
+               <td>Ячейка 1</td>
+               <td>Ячейка 2</td>
+               <td>Ячейка 3</td>
+               <td>Ячейка 4</td>
+           </tr>
+           <tr class="nechet">
+               <td rowspan="2">объединенная ячейка</td>
+               <td>Ячейка 5</td>
+               <td>Ячейка 6</td>
+               <td>Ячейка 7</td>
+           </tr>
+           <tr class="chet">
+               <td>Ячейка 8</td>
+               <td>Ячейка 9</td>
+               <td>Ячейка 10</td>
+           </tr>
+           <tr class="nechet">
+               <td>Ячейка 11</td>
+               <td>Ячейка 12</td>
+               <td>Ячейка 13</td>
+               <td>Ячейка 14</td>
+           </tr>
+           </table>
+           </div>
+        </div>
+        
+        <div class="row col my-4 "  id="Myform">
+            <strong>Форма</strong>
+				<form action="/" method="POST">
+				  <label><a id="Форма"></a>
+					<em>Имя:</em><br />
+					<input name="field-name-1"
+					  value="" />
+				  </label><br />
+				  <label>
+					<em>Email:</em><br />
+					<input name="field-email"
+					  value=""
+					  type="email" />
+				  </label><br />
+				  <label>
+					<em>Дата рождения:</em><br />
+					<input name="field-date"
+					  value=""
+					  type="date" />
+				  </label><br />  
+
+				  <em>Ваш пол:</em><br />
+				  <label><input type="radio" checked="checked"
+					name="radio-group-1" value="Значение1" />
+					Мужской</label>
+				  <label><input type="radio"
+					name="radio-group-1" value="Значение2" />
+					Женский</label><br />
+				  <label><input type="radio"
+					name="radio-group-1" value="Значение2" />
+					Боевой вертолет</label><br />
+					
+				  <em>Колличество ваших конечностей:</em><br />
+				  <label><input type="radio" checked="checked"
+					name="radio-group-2" value="Значение1" />
+					Нет</label>
+				  <label><input type="radio"
+					name="radio-group-2" value="Значение2" />
+					Менее 2</label><br />
+				  <label><input type="radio"
+					name="radio-group-2" value="Значение2" />
+					Более 2</label><br />
+
+					<label>
+						<em>Биография:</em><br />
+						<textarea name="field-name-2"></textarea>
+					</label><br />
+
+				  <label>
+					<em>Сверхспособности:</em>
+					<br />
+					<select name="field-name-4[]"
+					  multiple="multiple">
+					  <option value="Значение1">Бессмертие</option>
+					  <option value="Значение2" selected="selected">Прохождение сквозь стены</option>
+					  <option value="Значение3" selected="selected">Левитация</option>
+					</select>
+				  </label><br />
+				  
+				 <br /><label><input type="checkbox" checked="checked" name="check-1" />С контрактом ознакомлен</label>
+                 <br /><input type="submit" value="Отправить" formaction="http://www.kubsu.ru/" />
+				</form>
+        </div>
+
+        <div class="row col my-4 " id="Mycalc">
+         <div>
+            <div>Количество товара:<br/> 
+            <input type="text" id="count" value="" onchange="updatePrice()" />
+            <br/>
+            </div>
+            Тип товара:
+           <div  id="CalcForm">
+            <form>
+                <select name="registrs">
+                <option value="1">eax</option>
+                <option value="2">ebx</option>
+                <option value="3">ecx</option>
+                <option value="4">edx</option>
+                </select>
+                <div id="radios">
+                    <label><input type="radio" name="prodOptions" value="option1"> ax</label>
+                    <label><input type="radio" name="prodOptions" value="option2"> bx</label>
+                    <label><input type="radio" name="prodOptions" value="option3"> cx</label>
+                    <label><input type="radio" name="prodOptions" value="option3"> dx</label>
+                </div>
+                <div id="checkboxes">
+                    <label><input type="checkbox" name="prop1"> esi</label>
+                    <label><input type="checkbox" name="prop2"> edi</label>
+                </div>
+            </form>
+           </div>
+         </div>
+        </div>
+
+    </main>
+
+    <footer class="container_fluid" >
+        <div class="container row">
+            <div class="col-3 mt-4">
+               <p><span>(c) Князян Армен 2021</span></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
