@@ -1,101 +1,97 @@
- function updatePrice() {
- 
-  let s = document.getElementsByName("prodType");
-  let select = s[0];
-  let price = 0;
- let count = document.getElementById("count");
-  let prices = getPrices();
-  let priceIndex = parseInt(select.value) - 1;
-  if (priceIndex >= 0 ) {
-    price = prices.prodTypes[priceIndex]*parseInt(count.value);
-
-  }
-  
-  let radioDiv = document.getElementById("radios");
-  radioDiv.style.display = (select.value == "2" ? "block" : "none");
-
-
-  
-  
-  let radios = document.getElementsByName("prodOptions");
-  radios.forEach(function(radio) {
-    if (radio.checked){
-      let optionPrice = prices.prodOptions[radio.value];
-      if (optionPrice !== undefined){
-        price += optionPrice;
+document.getElementById('btn1').onclick = (event) => {
+    event.preventDefault();
+    let number = document.getElementById('num').value;
+    let price = document.getElementById('price').value;
+    if((/\D/.test(number)) || (/\D/.test(price))){
+        console.log('complete');
+        document.getElementById('itog').innerHTML = "Not valid value";  
       }
+    else{
+        console.log('not complete');
+        document.getElementById('itog').innerHTML = number*price ;
     }
-  });
-
-  let checkDiv = document.getElementById("checkboxes");
-  checkDiv.style.display = (select.value == "2" ? "none" : "block");
-checkDiv.style.display = (select.value == "3" ? "block" : "none");
-
-
-  let checkboxes = document.querySelectorAll("#checkboxes input");
-  checkboxes.forEach(function(checkbox) {
-    if (checkbox.checked) {
-      let propPrice = prices.prodProperties[checkbox.name];
-      if (propPrice !== undefined) {
-        price += propPrice;
-      }
-    }
-  });
-  
-  let prodPrice = document.getElementById("prodPrice");
-  prodPrice.innerHTML = price + " рублей";
-
 }
 
-function getPrices() {
-  return {
-    prodTypes: [100, 250, 500],
-    prodOptions: {
-      option2: 10*parseInt(count.value),
-      option3: 5*parseInt(count.value),
-    },
-    prodProperties: {
-      prop1: 1*parseInt(count.value),
-      prop2: 2*parseInt(count.value),
+let sel_price = [100, 200, 300];
+let rad_price = [20, 60, 70];
+let che_pr = 15;
+
+function getRadPrice(cop_main){
+    r = document.getElementsByName('try');
+    for(let i of r){
+        if(i.checked){
+            return cop_main + rad_price[i.value-1];
+        }
     }
-  };
 }
 
-window.addEventListener('DOMContentLoaded', function (event) {
+function getPrice(){
+    let secss = document.getElementById('secs');
+    let chec = document.getElementById('che');
 
-  let radioDiv = document.getElementById("radios");
-  radioDiv.style.display = "none";
-  
-  
-  let s = document.getElementsByName("prodType");
-  let select = s[0];
- 
-  select.addEventListener("change", function(event) {
-    let target = event.target;
-    console.log(target.value);
-    updatePrice();
-  });
-  
-   
-  let radios = document.getElementsByName("prodOptions");
-  radios.forEach(function(radio) {
-    radio.addEventListener("change", function(event) {
-      let r = event.target;
-      console.log(r.value);
-      updatePrice();
+    let s = document.querySelector('.af');
+        let uf = s.value;
+        if(uf ==1){
+            secss.style.display = "none";
+            chec.style.display = "none";
+            return sel_price[0];
+        }
+        else if(uf == 2){
+            secss.style.display = "block";
+            chec.style.display = "none";
+            return sel_price[1] + rad_price[0];
+        }
+        else if(uf == 3){
+            secss.style.display = "none";
+            chec.style.display = "block";
+            return sel_price[2];
+        }
+    return 0;
+}
+
+window.addEventListener('DOMContentLoaded', function(event){
+    let secss = document.getElementById('secs');
+    let chec = document.getElementById('che');
+    secss.style.display = "none";
+    chec.style.display = "none";
+
+    let see_pr = document.getElementById('outcome');
+    let main_price=0;
+
+    let selector = document.querySelector('.af');
+    let selec = selector[0];
+    main_price = getPrice();
+    see_pr.innerHTML = main_price;
+
+    let que = document.getElementById('numm');
+
+    que.addEventListener('change', function(event){
+        see_pr.innerHTML = main_price*que.value;
     });
-  });
 
-  
-  let checkboxes = document.querySelectorAll("#checkboxes input");
-  checkboxes.forEach(function(checkbox) {
-    checkbox.addEventListener("change", function(event) {
-      let c = event.target;
-      console.log(c.name);
-      console.log(c.value);
-      updatePrice();
+    document.querySelector('.af').addEventListener('change', function(event){
+        main_price = getPrice();
+        see_pr.innerHTML = main_price*que.value;
     });
-  });
+    
+    let r = document.getElementsByName('try');
+    for (let i of r){
+        i.addEventListener('change', function(event){
+            main_price=getRadPrice(sel_price[1])*que.value;
+            see_pr.innerHTML = main_price;
+        });
+    }
 
-  updatePrice();
+    let che = document.getElementById('check');
+    che.addEventListener('change', function(event){
+        if (che.checked){
+            main_price+=che_pr;
+            see_pr.innerHTML = main_price*que.value;
+        }
+        else{
+            main_price = sel_price[2]*que.value;
+            see_pr.innerHTML = main_price;
+        }
+
+    });
 });
