@@ -5,7 +5,6 @@
     <title>Document</title>
   </head>
   <body>
- 
 
     <div id="first_block">
       <form>
@@ -19,8 +18,8 @@
           >Цена<input id="price" type="text" /><span id="Err2"></span
         ></label>
         <br />
-        <button id="btn1">Go</button>
-        <span>Сумма</span>
+        <button id="btn1">Посчитать</button>
+        <span>Итог:</span>
         <span id="itog"></span>
       </form>
     </div>
@@ -32,10 +31,9 @@
         /></label>
         <div id="sele">
           <select class="af" id="firs">
-            <option value="1" class="fir">eax</option>
-            <option value="2" class="fir">ebx</option>
-            <option value="3" class="fir">ecx</option>
-            <option value="4" class="fir">edx</option>
+            <option value="1" class="fir">1</option>
+            <option value="2" class="fir">2</option>
+            <option value="3" class="fir">3</option>
           </select>
           <div id="secs">
             <label
@@ -45,27 +43,24 @@
                 name="try"
                 value="1"
                 checked
-              />ax</label
+              />.1</label
             >
             <label
-              ><input class="sec" type="radio" name="try" value="2" />bx</label
+              ><input class="sec" type="radio" name="try" value="2" />.2</label
             >
             <label
-              ><input class="sec" type="radio" name="try" value="3" />cx</label
-            >
-            <label
-              ><input class="sec" type="radio" name="try" value="4" />dx</label
+              ><input class="sec" type="radio" name="try" value="3" />.3</label
             >
           </div>
           <div id="che">
-            <label><input type="checkbox" id="check" />dx</label>
+            <label><input type="checkbox" id="check" />eax</label>
           </div>
         </div>
-        <span>Цена</span>
+        <span>Цена в рублях: </span>
         <span id="outcome"></span>
       </form>
     </div>
 
-    <script src="calc.js"></script>
+    <script src="calc2.js"></script>
   </body>
 </html>
