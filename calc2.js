@@ -12,9 +12,9 @@ document.getElementById('btn1').onclick = (event) => {
     }
 }
 
-let sel_price = [100, 200, 300];
-let rad_price = [20, 60, 70];
-let che_pr = 15;
+let sel_price = [100, 400, 700];
+let rad_price = [50, 150, 350];
+let che_pr = 1500;
 
 function getRadPrice(cop_main){
     r = document.getElementsByName('try');
